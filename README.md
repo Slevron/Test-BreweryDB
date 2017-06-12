@@ -2,7 +2,7 @@
 
 made with laravel + vuejs
 
-composer install
-npm install
-php artisan key:generate
-npm run 
+## composer install
+## npm install
+## php artisan key:generate
+## npm run 

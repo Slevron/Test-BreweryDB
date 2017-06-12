@@ -1,0 +1,144 @@
+$heightScreen : 100vh;
+$padding : 5px;
+$margin  : 5px;
+$iconSize: 64px;
+#app, .all-height{
+    height: $heightScreen;
+    overflow: hidden;
+}
+
+.scroll-container{
+    height: $heightScreen / 1.5;
+    overflow-y: scroll;
+    &.scroll-custom{
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #ddd;
+        } 
+        &::-webkit-scrollbar-thumb {
+            background: #666; 
+        } 
+    }
+}
+
+.beer-container{
+    margin: $margin 0;
+    background-color: white;
+    padding: $padding;
+    transition: 0.5s background-color ease-in-out;
+    &:hover{
+        cursor: pointer;
+        background-color: aliceblue;
+    }
+    img{
+        float: left;
+        max-width: $iconSize;
+        height: $iconSize;
+    }
+    .information{
+        margin: 0 0 0 $iconSize+25;
+        .title{
+            color: gold;   
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.beer-info-container{
+    $iconSize: 150px;
+    margin: 0 -15px;
+    height: 100vh;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(-50vh);
+    transition: 1s all ease-in-out;
+    &.active{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .child-container{
+        background: rgba(233, 235, 237, 0.47);
+        padding: 15px;
+        img{
+            float: left;
+            max-width: $iconSize;
+            height: $iconSize;
+        }
+        .information{
+            margin: 0 0 0 $iconSize+25;
+            .title{
+                color: gold;   
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    .child-container-brewery{
+        background: #fff;
+        padding: 15px;
+        .information{
+            .title a{
+                color: gold;   
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.brewery-info-container{
+    .title{
+        color: gold;   
+        padding: 15px 0;
+    }
+    .beers{
+        padding: 15px;
+        background-color: initial;
+        transition: 0.5s background-color ease-in;
+        &:hover{
+            background-color: white;
+            cursor: pointer;
+        }
+        img{
+            display: block;
+            max-width: 128px;
+            height: 128px;
+            margin: auto;
+            float: none;
+        }
+        .title{
+            color: black;
+            text-align: center;   
+        }
+    }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  margin: 100px auto;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
